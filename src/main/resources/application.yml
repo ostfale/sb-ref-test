@@ -26,3 +26,9 @@ management:
       exposure:
         include: health,info,env,mappings,prometheus
 
+logging:
+  pattern:
+    console: "%date - %logger{30} - %message%n"
+  level:
+    org.springframework: WARN
+

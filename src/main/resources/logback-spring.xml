@@ -1,0 +1,33 @@
+<configuration>
+
+    <springProperty
+            scope="context"
+            name="consolePattern"
+            source="logging.pattern.console"
+    />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                ${consolePattern}
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="prod">
+        <logger name="de.ostfale" level="WARN" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="dev">
+        <logger name="de.ostfale" level="DEBUG" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+    </springProfile>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
