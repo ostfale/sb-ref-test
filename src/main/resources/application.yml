@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: sb-ref-test
+
+server:
+  port: 28081
+
+management:
+  server:
+    port: 28082
+  endpoints:
+    web:
+      base-path: /mgmt
+      exposure:
+        include: health,info,env,prometheus
