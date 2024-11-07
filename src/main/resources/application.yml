@@ -6,10 +6,23 @@ server:
   port: 28081
 
 management:
+  info:
+    build:
+      enabled: true
+    git:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always
+    mappings:
+      enabled: true
   server:
     port: 28082
   endpoints:
     web:
       base-path: /mgmt
       exposure:
-        include: health,info,env,prometheus
+        include: health,info,env,mappings,prometheus
+
