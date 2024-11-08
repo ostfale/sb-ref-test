@@ -18,17 +18,22 @@ management:
       show-details: always
     mappings:
       enabled: true
+    metrics:
+      enabled: true
   server:
     port: 28082
   endpoints:
     web:
       base-path: /mgmt
       exposure:
-        include: health,info,env,mappings,prometheus
+        include: health,info,env,mappings,metrics,prometheus
+  metrics:
+    tags:
+      host: ${HOST_NAME}
+      environment: dev
 
 logging:
   pattern:
-    console: "%date - %logger{30} - %message%n"
+    console: "%date %5p [%X{traceId},%X{spanId}]- %logger{30} - %message%n"
   level:
     org.springframework: WARN
-
