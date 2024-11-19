@@ -15,7 +15,6 @@ public class TracerController {
 
     private final Tracer tracer;
 
-
     public TracerController(Tracer tracer) {
         this.tracer = tracer;
     }
