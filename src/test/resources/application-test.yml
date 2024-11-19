@@ -1,0 +1,4 @@
+custom:
+  weather:
+    url: https://test.weather.com
+    port: 8081

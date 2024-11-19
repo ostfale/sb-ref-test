@@ -81,6 +81,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <argLine>-XX:+EnableDynamicAgentLoading</argLine>
+                    <groups>UnitTest</groups>
                 </configuration>
             </plugin>
             <plugin>

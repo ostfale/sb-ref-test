@@ -46,3 +46,11 @@ logging:
     console: "%date %5p [%X{traceId},%X{spanId}] %logger{30} - %message%n"
   level:
     org.springframework: WARN
+
+custom:
+  weather:
+    url: https://local.weather.com
+    port: 8081
+    max-retries: 3
+    timeout: 60
+    token: x3ddf22
